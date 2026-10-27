@@ -183,8 +183,6 @@ body{
   font-size:14px;color:#bda893;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
 }
 
-#archives{display:none;}
-
 @media (max-width:700px){
   /* le bandeau est trop bas pour le titre une fois la page rétrécie */
   .bandeau{min-height:350px;}
@@ -470,8 +468,6 @@ body{
   </div>
 </div>
 
-<div id="archives"></div>
-
 <script>
 var PHOTOS_TEMOIGNAGES = ['photo-01', 'photo-02', 'photo-03', 'photo-09', 'photo-12',
                           'photo-14', 'photo-05', 'photo-22'];
@@ -571,18 +567,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
       document.getElementById('grille-animaux').innerHTML += htmlFiches;
 
-      var histo = donnees.historique_adoptions;
-      var htmlHisto = '';
-      for (var j = 0; j < histo.length; j++) {
-        var h = histo[j];
-        htmlHisto += '<div class="ligne-archive">' +
-          '<span>' + h.nom_animal + '</span>' +
-          '<span>' + h.date_adoption + '</span>' +
-          '<span>' + h.adoptant.prenom + ' ' + h.adoptant.nom + '</span>' +
-          '<span>' + h.commentaire_benevole + '</span>' +
-          '</div>';
-      }
-      document.getElementById('archives').innerHTML = htmlHisto;
     });
 });
 </script>
