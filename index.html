@@ -73,6 +73,7 @@ body{
 
 /* ---- bandeau ---- */
 .bandeau{position:relative;margin-top:var(--hauteur-barre);overflow:hidden;background:var(--brun);}
+.bandeau picture{display:block;}
 .bandeau img{display:block;width:100%;}
 .bandeau-voile{
   position:absolute;inset:0;
@@ -225,9 +226,9 @@ body{
 
 <div class="bandeau">
   <picture>
-    <source media="(max-width:412px)" srcset="assets/optimized/bandeau-mobile-412.webp">
-    <source media="(max-width:700px)" srcset="assets/optimized/bandeau-mobile-618.webp">
-    <img id="bandeau-image" src="assets/optimized/bandeau.webp" srcset="assets/optimized/bandeau-640.webp 640w, assets/optimized/bandeau-960.webp 960w, assets/optimized/bandeau-1280.webp 1280w, assets/optimized/bandeau.webp 1600w" sizes="100vw" width="1600" height="600" loading="lazy" decoding="async">
+    <source media="(max-width:480px)" srcset="assets/optimized/bandeau-mobile-412.webp 412w, assets/optimized/bandeau-mobile-618.webp 618w, assets/optimized/bandeau-mobile-824.webp 824w" sizes="100vw">
+    <source media="(max-width:700px)" srcset="assets/optimized/bandeau-tablette-700.webp 700w, assets/optimized/bandeau-tablette-1050.webp 1050w, assets/optimized/bandeau-tablette-1400.webp 1400w" sizes="100vw">
+    <img id="bandeau-image" src="assets/optimized/bandeau-1600.webp" srcset="assets/optimized/bandeau-640.webp 640w, assets/optimized/bandeau-960.webp 960w, assets/optimized/bandeau-1280.webp 1280w, assets/optimized/bandeau-1600.webp 1600w" sizes="100vw" width="1600" height="600" loading="eager" fetchpriority="high" decoding="async">
   </picture>
   <div class="bandeau-voile"></div>
   <div class="bandeau-texte">
