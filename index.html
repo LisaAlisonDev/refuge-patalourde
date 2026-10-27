@@ -512,7 +512,7 @@ var fiches = document.querySelectorAll('[data-photo]');
 for (var f = 0; f < fiches.length; f++) {
   var photoFiche = fiches[f].getAttribute('data-photo');
   fiches[f].src = photoFiche;
-  fiches[f].srcset = photoSrcset(photoFiche, [320, 640]);
+  fiches[f].srcset = photoSrcset(photoFiche, [320, 368, 640, 736]);
   fiches[f].sizes = TAILLES_PHOTOS_FICHES;
 }
 
@@ -553,7 +553,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var a = dispo[i];
         htmlFiches += '<div class="fiche">' +
           '<img class="fiche-photo" width="800" height="533" loading="lazy" decoding="async" sizes="' + TAILLES_PHOTOS_FICHES +
-          '" srcset="' + photoSrcset(a.photo, [320, 640]) + '" src="' + a.photo + '">' +
+          '" srcset="' + photoSrcset(a.photo, [320, 368, 640, 736]) + '" src="' + a.photo + '">' +
           '<div class="fiche-corps"><h2>' + a.nom + '</h2>' +
           '<div class="fiche-meta">' + a.espece + ' · ' + a.race + ' · ' + a.age + ' · ' + a.sexe + '</div>' +
           '<div class="fiche-bio">' + a.bio + '</div>' +
