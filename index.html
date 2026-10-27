@@ -117,7 +117,6 @@ body{
   transition:transform .2s,box-shadow .2s;
 }
 .fiche:hover{transform:translateY(-3px);box-shadow:var(--ombre-forte);}
-.fiche picture{display:block;}
 .fiche-photo{width:100%;height:196px;object-fit:cover;display:block;background:var(--gris-clair);}
 .fiche-corps{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;}
 .fiche h2{font-size:21px;margin:0 0 2px;}
@@ -226,9 +225,9 @@ body{
 
 <div class="bandeau">
   <picture>
-    <source media="(max-width:480px)" srcset="assets/optimized/bandeau-mobile-412.webp 412w, assets/optimized/bandeau-mobile-618.webp 618w, assets/optimized/bandeau-mobile-824.webp 824w" sizes="100vw">
-    <source media="(max-width:700px)" srcset="assets/optimized/bandeau-tablette-700.webp 700w, assets/optimized/bandeau-tablette-1050.webp 1050w, assets/optimized/bandeau-tablette-1400.webp 1400w" sizes="100vw">
-    <img id="bandeau-image" src="assets/optimized/bandeau-1600.webp" srcset="assets/optimized/bandeau-640.webp 640w, assets/optimized/bandeau-960.webp 960w, assets/optimized/bandeau-1280.webp 1280w, assets/optimized/bandeau-1600.webp 1600w" sizes="100vw" width="1600" height="600" loading="eager" fetchpriority="high" decoding="async">
+    <source media="(max-width:480px)" srcset="assets/optimized/bandeau-mobile-320.webp 320w, assets/optimized/bandeau-mobile-412.webp 412w, assets/optimized/bandeau-mobile-618.webp 618w" sizes="100vw">
+    <source media="(max-width:700px)" srcset="assets/optimized/bandeau-tablette-480.webp 480w, assets/optimized/bandeau-tablette-700.webp 700w, assets/optimized/bandeau-tablette-1050.webp 1050w, assets/optimized/bandeau-tablette-1200.webp 1200w" sizes="100vw">
+    <img id="bandeau-image" src="assets/optimized/bandeau-1600.webp" srcset="assets/optimized/bandeau-640.webp 640w, assets/optimized/bandeau-800.webp 800w, assets/optimized/bandeau-960.webp 960w, assets/optimized/bandeau-1024.webp 1024w, assets/optimized/bandeau-1280.webp 1280w, assets/optimized/bandeau-1400.webp 1400w, assets/optimized/bandeau-1600.webp 1600w" sizes="100vw" width="1600" height="600" loading="eager" fetchpriority="high" decoding="async">
   </picture>
   <div class="bandeau-voile"></div>
   <div class="bandeau-texte">
@@ -249,7 +248,7 @@ body{
     <div class="grille" id="grille-animaux">
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-01-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-01.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-01.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Caramel</h2>
           <div class="fiche-meta">Chien · croisé labrador · 3 ans · Mâle</div>
@@ -259,7 +258,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-02-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-02.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-02.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Noisette</h2>
           <div class="fiche-meta">Chat · européen tigré · 1 an · Femelle</div>
@@ -269,7 +268,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-03-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-03.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-03.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Chouchou</h2>
           <div class="fiche-meta">Chien · bâtard péi · 5 ans · Mâle</div>
@@ -279,7 +278,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-04-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-04.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-04.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Bengali</h2>
           <div class="fiche-meta">Chat · européen roux · 8 mois · Mâle</div>
@@ -289,7 +288,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-05-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-05.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-05.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Filou</h2>
           <div class="fiche-meta">Chien · croisé griffon · 2 ans · Mâle</div>
@@ -299,7 +298,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-06-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-06.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-06.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Piment</h2>
           <div class="fiche-meta">Chat · européenne tigrée · 4 mois · Femelle</div>
@@ -309,7 +308,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-07-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-07.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-07.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Curcuma</h2>
           <div class="fiche-meta">Chien · croisé labrador · 6 ans · Mâle</div>
@@ -319,7 +318,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-08-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-08.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-08.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Safran</h2>
           <div class="fiche-meta">Chat · européen roux · 2 ans · Mâle</div>
@@ -329,7 +328,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-09-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-09.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-09.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Litchi</h2>
           <div class="fiche-meta">Lapin · bélier · 1 an · Femelle</div>
@@ -339,7 +338,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-10-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-10.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-10.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Goyave</h2>
           <div class="fiche-meta">Chienne · croisée border collie · 4 ans · Femelle</div>
@@ -349,7 +348,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-11-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-11.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-11.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Combava</h2>
           <div class="fiche-meta">Chat · européen noir et blanc · 7 ans · Mâle</div>
@@ -359,7 +358,7 @@ body{
       </div>
 
       <div class="fiche">
-        <picture><source media="(max-width:412px)" srcset="assets/optimized/photos/photo-12-368.webp"><img class="fiche-photo" data-photo="assets/optimized/photos/photo-12.webp" width="368" height="245" loading="lazy" decoding="async"></picture>
+        <img class="fiche-photo" data-photo="assets/optimized/photos/photo-12.webp" width="368" height="245" loading="lazy" decoding="async">
         <div class="fiche-corps">
           <h2>Réglisse</h2>
           <div class="fiche-meta">Chien · croisé spitz · 1 an · Mâle</div>
@@ -499,7 +498,7 @@ function ouvrirDon() {
   alert("Merci ! Les dons se font par virement : IBAN FR00 0000 0000 0000 0000 0000 000 (fictif) — ou directement au refuge le samedi matin.");
 }
 
-var TAILLES_PHOTOS_FICHES = '(max-width: 605px) calc(100vw - 44px), (max-width: 899px) calc((100vw - 70px) / 2), calc((100vw - 96px) / 3)';
+var TAILLES_PHOTOS_FICHES = '(max-width: 605px) calc(100vw - 44px), (max-width: 899px) calc((100vw - 70px) / 2), (max-width: 1180px) calc((100vw - 96px) / 3), 361px';
 
 function photoSrcset(photo, tailles) {
   var base = photo.replace(/\.webp$/, '');
@@ -509,15 +508,15 @@ function photoSrcset(photo, tailles) {
 }
 
 // bandeau + audio
-document.getElementById('audio-president').src = 'assets/message-president.mp3?v=' + Date.now();
+document.getElementById('audio-president').src = 'assets/message-president.mp3';
 
 // photos des fiches écrites en dur dans la page
 var fiches = document.querySelectorAll('[data-photo]');
 for (var f = 0; f < fiches.length; f++) {
   var photoFiche = fiches[f].getAttribute('data-photo');
-  fiches[f].src = photoFiche;
   fiches[f].srcset = photoSrcset(photoFiche, [320, 368, 640, 736]);
   fiches[f].sizes = TAILLES_PHOTOS_FICHES;
+  fiches[f].src = photoFiche.replace(/\.webp$/, '-368.webp');
 }
 
 // carrousel des témoignages
@@ -548,7 +547,7 @@ setInterval(function () {
 
 // données du refuge
 document.addEventListener('DOMContentLoaded', function () {
-  fetch('data/animaux.json?v=' + Date.now())
+  fetch('data/animaux-public.json')
     .then(function (r) { return r.json(); })
     .then(function (donnees) {
       var htmlFiches = '';
@@ -556,9 +555,8 @@ document.addEventListener('DOMContentLoaded', function () {
       for (var i = 0; i < dispo.length; i++) {
         var a = dispo[i];
         htmlFiches += '<div class="fiche">' +
-          '<picture><source media="(max-width:412px)" srcset="' + photoSrcset(a.photo, [368]) + '">' +
           '<img class="fiche-photo" width="368" height="245" loading="lazy" decoding="async" sizes="' + TAILLES_PHOTOS_FICHES +
-          '" srcset="' + photoSrcset(a.photo, [320, 368, 640, 736]) + '" src="' + a.photo + '"></picture>' +
+          '" srcset="' + photoSrcset(a.photo, [320, 368, 640, 736]) + '" src="' + a.photo.replace(/\.webp$/, '-368.webp') + '">' +
           '<div class="fiche-corps"><h2>' + a.nom + '</h2>' +
           '<div class="fiche-meta">' + a.espece + ' · ' + a.race + ' · ' + a.age + ' · ' + a.sexe + '</div>' +
           '<div class="fiche-bio">' + a.bio + '</div>' +
@@ -566,7 +564,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '<span class="etiquette">' + a.caractere[1] + '</span></div>' +
           '</div></div>';
       }
-      document.getElementById('grille-animaux').innerHTML += htmlFiches;
+      document.getElementById('grille-animaux').insertAdjacentHTML('beforeend', htmlFiches);
 
     });
 });
