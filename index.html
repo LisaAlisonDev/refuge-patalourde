@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Cache-Control" content="no-store">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<title>Refuge Patalourde — association de protection animale à La Réunion</title>
+<meta name="description" content="Le Refuge Patalourde recueille et fait adopter chiens, chats et petits animaux à La Réunion. Venez rencontrer nos pensionnaires.">
+<script>
+// on charge la feuille des icônes ici pour qu'elle parte le plus tôt possible
+var lienIcones = document.createElement('link');
+lienIcones.rel = 'stylesheet';
+lienIcones.href = 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css?v=' + Date.now();
+document.head.appendChild(lienIcones);
+</script>
+<style>
+:root{
+  --creme:#fdf8f2;
+  --creme-fonce:#f6ebdd;
+  --brun:#3a2e28;
+  --brun-doux:#6b5648;
+  --terracotta:#c0563a;
+  --terracotta-clair:#e07a58;
+  --vert:#3f7a55;
+  --vert-clair:#eaf2ec;
+  --blanc:#ffffff;
+  --gris-clair:#e8ded2;
+  --gris-pale:#9a9a9a;
+  --ombre:0 2px 10px rgba(58,46,40,.08);
+  --ombre-forte:0 6px 22px rgba(58,46,40,.14);
+  --rayon:14px;
+  --largeur:1180px;
+  --hauteur-barre:66px;
+}
+*{box-sizing:border-box;}
+body{
+  margin:0;
+  background:var(--creme);
+  color:var(--brun);
+  font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-size:17px;
+  line-height:1.6;
+}
+.conteneur{max-width:var(--largeur);margin:0 auto;padding:0 22px;}
+
+/* ---- barre du haut ---- */
+.barre{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:var(--creme);
+  border-bottom:1px solid var(--gris-clair);
+  box-shadow:var(--ombre);
+}
+.barre-inner{
+  max-width:var(--largeur);margin:0 auto;padding:12px 22px;
+  display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
+}
+.marque{display:flex;align-items:center;gap:10px;font-weight:700;font-size:20px;letter-spacing:.2px;}
+.marque .fa-paw{color:var(--terracotta);}
+.menu{display:flex;gap:6px;flex-wrap:wrap;}
+.menu-item{
+  padding:8px 14px;border-radius:999px;cursor:pointer;
+  font-size:15px;font-weight:600;color:var(--brun-doux);
+  transition:background .18s,color .18s;
+  outline:none;
+}
+.menu-item:hover{background:var(--creme-fonce);color:var(--terracotta);}
+
+/* ---- bandeau ---- */
+.bandeau{position:relative;margin-top:var(--hauteur-barre);overflow:hidden;background:var(--brun);}
+.bandeau img{display:block;width:100%;}
+.bandeau-voile{
+  position:absolute;inset:0;
+  background:linear-gradient(100deg,rgba(58,46,40,.78) 0%,rgba(58,46,40,.45) 45%,rgba(58,46,40,.12) 100%);
+}
+.bandeau-texte{
+  position:absolute;inset:0;display:flex;flex-direction:column;justify-content:center;
+  max-width:var(--largeur);margin:0 auto;padding:0 42px;color:var(--blanc);
+}
+.bandeau-texte h1{
+  font-size:clamp(26px,4.2vw,50px);line-height:1.15;margin:0 0 12px;
+  text-shadow:0 2px 14px rgba(0,0,0,.4);max-width:15ch;
+}
+.bandeau-accroche{
+  font-size:clamp(15px,1.7vw,21px);max-width:46ch;
+  text-shadow:0 1px 10px rgba(0,0,0,.45);
+}
+.bandeau-puce{
+  display:inline-block;margin-bottom:16px;padding:5px 14px;border-radius:999px;
+  background:rgba(192,86,58,.92);font-size:13px;font-weight:700;
+  letter-spacing:.6px;text-transform:uppercase;width:fit-content;
+}
+
+/* ---- sections ---- */
+.bloc{padding:68px 0;scroll-margin-top:var(--hauteur-barre);}
+.bloc-creme{background:var(--creme-fonce);}
+.titre-section{
+  font-size:clamp(24px,3vw,34px);margin:0 0 6px;font-weight:700;
+}
+.sous-titre{color:var(--brun-doux);margin-bottom:34px;max-width:62ch;}
+.filet{width:64px;height:4px;border-radius:2px;background:var(--terracotta);margin:0 0 18px;}
+
+/* ---- grille des animaux ---- */
+.grille{
+  display:grid;gap:26px;
+  grid-template-columns:repeat(auto-fill,minmax(268px,1fr));
+}
+.fiche{
+  background:var(--blanc);border-radius:var(--rayon);overflow:hidden;
+  box-shadow:var(--ombre);display:flex;flex-direction:column;
+  transition:transform .2s,box-shadow .2s;
+}
+.fiche:hover{transform:translateY(-3px);box-shadow:var(--ombre-forte);}
+.fiche-photo{width:100%;height:196px;object-fit:cover;display:block;background:var(--gris-clair);}
+.fiche-corps{padding:16px 18px 20px;display:flex;flex-direction:column;flex:1;}
+.fiche h2{font-size:21px;margin:0 0 2px;}
+.fiche-meta{font-size:14px;color:var(--gris-pale);margin-bottom:10px;}
+.fiche-bio{font-size:15px;color:var(--brun-doux);flex:1;}
+.etiquettes{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px;}
+.etiquette{
+  font-size:12px;padding:3px 10px;border-radius:999px;
+  background:var(--vert-clair);color:var(--vert);font-weight:600;
+}
+
+/* ---- mot du président ---- */
+.president{display:grid;grid-template-columns:1.35fr 1fr;gap:40px;align-items:start;}
+.president-texte span{display:block;margin-bottom:14px;}
+.signature{font-weight:700;color:var(--terracotta);margin-top:18px;}
+.encart-audio{
+  background:var(--blanc);border-radius:var(--rayon);padding:24px;
+  box-shadow:var(--ombre);border-left:5px solid var(--terracotta);
+}
+.encart-audio-titre{font-weight:700;margin-bottom:4px;}
+.encart-audio-note{font-size:14px;color:var(--brun-doux);margin-bottom:14px;}
+.encart-audio audio{width:100%;}
+
+/* ---- carrousel ---- */
+.carrousel{overflow:hidden;border-radius:var(--rayon);background:var(--blanc);box-shadow:var(--ombre);}
+.piste{display:flex;width:800%;transition:margin-left .55s ease;}
+.temoignage{width:12.5%;padding:38px 44px;display:flex;gap:24px;align-items:center;}
+.temoignage-photo{
+  width:96px;height:96px;border-radius:50%;object-fit:cover;flex:0 0 96px;
+  background:var(--gris-clair);
+}
+.temoignage-texte{font-size:17px;font-style:italic;color:var(--brun-doux);}
+.temoignage-auteur{margin-top:10px;font-style:normal;font-weight:700;color:var(--brun);}
+.temoignage-lieu{font-size:14px;color:var(--brun-doux);font-weight:400;}
+.puces{display:flex;gap:7px;justify-content:center;margin-top:20px;}
+.puce{width:9px;height:9px;border-radius:50%;background:var(--gris-clair);}
+.puce-active{background:var(--terracotta);}
+
+/* ---- nous soutenir ---- */
+.soutien{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;}
+.bouton-don{
+  display:inline-flex;align-items:center;gap:10px;margin-top:20px;
+  background:var(--terracotta);color:var(--blanc);font-weight:700;font-size:17px;
+  padding:14px 30px;border-radius:999px;cursor:pointer;width:fit-content;
+  box-shadow:0 4px 14px rgba(192,86,58,.34);
+  transition:background .18s,transform .18s;outline:none;
+}
+.bouton-don:hover{background:var(--terracotta-clair);transform:translateY(-1px);}
+.mention-don{font-size:14px;color:var(--gris-pale);margin-top:12px;}
+.infos-pratiques{background:var(--blanc);border-radius:var(--rayon);padding:24px 26px;box-shadow:var(--ombre);}
+.info-ligne{display:flex;gap:12px;margin-bottom:12px;font-size:16px;}
+.info-ligne .fa-solid{color:var(--terracotta);width:20px;text-align:center;margin-top:4px;}
+.galerie-soutien{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;}
+.galerie-soutien img{width:100%;height:108px;object-fit:cover;border-radius:10px;display:block;background:var(--gris-clair);}
+
+/* ---- pied de page ---- */
+.pied{background:var(--brun);color:#e9ded4;padding:52px 0 30px;}
+.pied-grille{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;}
+.pied h4{font-size:16px;margin:0 0 14px;color:var(--blanc);letter-spacing:.4px;}
+.pied-ligne{display:flex;gap:10px;margin-bottom:9px;font-size:15px;}
+.pied-ligne .fa-solid{color:var(--terracotta-clair);width:18px;text-align:center;margin-top:4px;}
+.horaire{display:flex;justify-content:space-between;font-size:15px;margin-bottom:7px;max-width:270px;}
+.horaire span:last-child{color:#c9b8a8;}
+.note-horaires{font-size:13px;color:var(--gris-pale);margin-top:14px;max-width:270px;}
+.pied-bas{
+  border-top:1px solid rgba(255,255,255,.13);margin-top:34px;padding-top:18px;
+  font-size:14px;color:#bda893;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+}
+
+#archives{display:none;}
+
+@media (max-width:700px){
+  /* le bandeau est trop bas pour le titre une fois la page rétrécie */
+  .bandeau{min-height:350px;}
+  .bandeau img{height:350px;object-fit:cover;}
+}
+@media (max-width:900px){
+  .president,.soutien{grid-template-columns:1fr;gap:28px;}
+  .pied-grille{grid-template-columns:1fr;gap:28px;}
+  .temoignage{flex-direction:column;text-align:center;padding:30px 26px;}
+  .bandeau-texte{padding:0 26px;}
+}
+@media (max-width:560px){
+  body{font-size:16px;}
+  .bloc{padding:46px 0;}
+  .grille{grid-template-columns:1fr;}
+  .marque{font-size:18px;}
+  .menu-item{padding:6px 10px;font-size:14px;}
+  .bandeau-texte{padding:0 20px;}
+  .galerie-soutien{grid-template-columns:repeat(2,1fr);}
+}
+</style>
+</head>
+<body>
+
+<div class="barre">
+  <div class="barre-inner">
+    <div class="marque"><span class="fa-solid fa-paw"></span><span>Refuge Patalourde</span></div>
+    <div class="menu">
+      <div class="menu-item" onclick="allerVers('pensionnaires')">Nos pensionnaires</div>
+      <div class="menu-item" onclick="allerVers('president')">Le mot du président</div>
+      <div class="menu-item" onclick="allerVers('temoignages')">Ils ont adopté</div>
+      <div class="menu-item" onclick="allerVers('soutenir')">Nous soutenir</div>
+    </div>
+  </div>
+</div>
+
+<div class="bandeau">
+  <img id="bandeau-gif">
+  <div class="bandeau-voile"></div>
+  <div class="bandeau-texte">
+    <span class="bandeau-puce">Association loi 1901 · La Réunion</span>
+    <h1>Ici, personne ne repart les mains vides</h1>
+    <div class="bandeau-accroche">Depuis 2011, une poignée de bénévoles recueille, soigne et replace les
+      chiens, chats et petits animaux abandonnés des Hauts de l'Ouest. Venez les rencontrer, ils font le
+      reste tout seuls.</div>
+  </div>
+</div>
+
+<div class="bloc" id="pensionnaires">
+  <div class="conteneur">
+    <div class="filet"></div>
+    <h4 class="titre-section">Nos pensionnaires à l'adoption</h4>
+    <div class="sous-titre">Tous nos animaux sont identifiés, vaccinés et stérilisés avant leur départ.
+      Une visite au refuge est indispensable avant toute adoption — on préfère que ça colle du premier coup.</div>
+    <div class="grille" id="grille-animaux">
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-01.jpg">
+        <div class="fiche-corps">
+          <h2>Caramel</h2>
+          <div class="fiche-meta">Chien · croisé labrador · 3 ans · Mâle</div>
+          <div class="fiche-bio">Il rapporte la balle une fois sur deux. L'autre fois, il la garde et vous regarde.</div>
+          <div class="etiquettes"><span class="etiquette">joueur</span><span class="etiquette">sociable</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-02.jpg">
+        <div class="fiche-corps">
+          <h2>Noisette</h2>
+          <div class="fiche-meta">Chat · européen tigré · 1 an · Femelle</div>
+          <div class="fiche-bio">Elle dort dans le carton des croquettes, jamais dans le panier qu'on lui a acheté.</div>
+          <div class="etiquettes"><span class="etiquette">câline</span><span class="etiquette">discrète</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-03.jpg">
+        <div class="fiche-corps">
+          <h2>Chouchou</h2>
+          <div class="fiche-meta">Chien · bâtard péi · 5 ans · Mâle</div>
+          <div class="fiche-bio">Le doyen du box 2. Calme comme un dimanche après-midi, parfait pour une maison tranquille.</div>
+          <div class="etiquettes"><span class="etiquette">calme</span><span class="etiquette">patient</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-04.jpg">
+        <div class="fiche-corps">
+          <h2>Bengali</h2>
+          <div class="fiche-meta">Chat · européen roux · 8 mois · Mâle</div>
+          <div class="fiche-bio">Il grimpe absolument partout, y compris sur les épaules des bénévoles pendant le ménage.</div>
+          <div class="etiquettes"><span class="etiquette">vif</span><span class="etiquette">curieux</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-05.jpg">
+        <div class="fiche-corps">
+          <h2>Filou</h2>
+          <div class="fiche-meta">Chien · croisé griffon · 2 ans · Mâle</div>
+          <div class="fiche-bio">Un regard de cocker et il obtient tout ce qu'il veut. Y compris la moitié de votre repas.</div>
+          <div class="etiquettes"><span class="etiquette">gourmand</span><span class="etiquette">affectueux</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-06.jpg">
+        <div class="fiche-corps">
+          <h2>Piment</h2>
+          <div class="fiche-meta">Chat · européenne tigrée · 4 mois · Femelle</div>
+          <div class="fiche-bio">Petite boule d'énergie qui ne tient pas en place plus de deux secondes d'affilée.</div>
+          <div class="etiquettes"><span class="etiquette">énergique</span><span class="etiquette">joueuse</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-07.jpg">
+        <div class="fiche-corps">
+          <h2>Curcuma</h2>
+          <div class="fiche-meta">Chien · croisé labrador · 6 ans · Mâle</div>
+          <div class="fiche-bio">Très obéissant, il connaît déjà « assis » et « pas bouger ». Le reste s'apprendra chez vous.</div>
+          <div class="etiquettes"><span class="etiquette">obéissant</span><span class="etiquette">protecteur</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-08.jpg">
+        <div class="fiche-corps">
+          <h2>Safran</h2>
+          <div class="fiche-meta">Chat · européen roux · 2 ans · Mâle</div>
+          <div class="fiche-bio">Il commence à ronronner dès qu'on pose la main sur la poignée de son box.</div>
+          <div class="etiquettes"><span class="etiquette">câlin</span><span class="etiquette">doux</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-09.jpg">
+        <div class="fiche-corps">
+          <h2>Litchi</h2>
+          <div class="fiche-meta">Lapin · bélier · 1 an · Femelle</div>
+          <div class="fiche-bio">Elle adore les fanes de carottes et les grattouilles entre les oreilles, dans cet ordre.</div>
+          <div class="etiquettes"><span class="etiquette">douce</span><span class="etiquette">gourmande</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-10.jpg">
+        <div class="fiche-corps">
+          <h2>Goyave</h2>
+          <div class="fiche-meta">Chienne · croisée border collie · 4 ans · Femelle</div>
+          <div class="fiche-bio">Grande sportive. Il lui faut un terrain, de la marche, et des gens qui aiment sortir.</div>
+          <div class="etiquettes"><span class="etiquette">sportive</span><span class="etiquette">fidèle</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-11.jpg">
+        <div class="fiche-corps">
+          <h2>Combava</h2>
+          <div class="fiche-meta">Chat · européen noir et blanc · 7 ans · Mâle</div>
+          <div class="fiche-bio">Discret et posé, il cherche une maison calme pour couler des jours tranquilles.</div>
+          <div class="etiquettes"><span class="etiquette">tranquille</span><span class="etiquette">indépendant</span></div>
+        </div>
+      </div>
+
+      <div class="fiche">
+        <img class="fiche-photo" data-photo="assets/photos/photo-12.jpg">
+        <div class="fiche-corps">
+          <h2>Réglisse</h2>
+          <div class="fiche-meta">Chien · croisé spitz · 1 an · Mâle</div>
+          <div class="fiche-bio">Plein de vie et d'envie d'apprendre. Il demande un maître qui aime bouger autant que lui.</div>
+          <div class="etiquettes"><span class="etiquette">énergique</span><span class="etiquette">malin</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="bloc bloc-creme" id="president">
+  <div class="conteneur">
+    <div class="filet"></div>
+    <h4 class="titre-section">Le mot du président</h4>
+    <div class="sous-titre">Quelques mots de Jean-Hugues, qui tient la barre depuis la création de l'association.</div>
+    <div class="president">
+      <div class="president-texte">
+        <span>Quand on a ouvert le refuge en 2011, on était quatre, avec deux box en tôle et une brouette.
+          On pensait tenir un an. Quinze ans plus tard, on a fait adopter plus de neuf cents animaux et
+          l'équipe compte trente-deux bénévoles, dont certains viennent tous les samedis depuis le
+          premier jour.</span>
+        <span>Ce qu'on fait n'a rien de compliqué : on ramasse ce que les autres laissent au bord de la
+          route, on soigne, on rassure, et on attend qu'une famille passe la porte. Le plus dur, ce n'est
+          pas le travail, c'est de dire non quand on n'a plus de place. Et ça arrive plus souvent qu'on
+          ne voudrait, surtout après les vacances et après les cyclones.</span>
+        <span>Alors si vous hésitez encore : venez. Même sans projet d'adoption. Venez promener un chien
+          le dimanche matin, venez brosser les chats, venez boire un café avec nous. C'est comme ça que
+          la plupart de nos bénévoles ont commencé, et c'est comme ça que la plupart de nos adoptants
+          sont repartis avec quelqu'un.</span>
+        <div class="signature">Jean-Hugues Técher, président du Refuge Patalourde</div>
+      </div>
+      <div class="encart-audio">
+        <div class="encart-audio-titre">Écouter le message</div>
+        <div class="encart-audio-note">Enregistré au refuge un samedi matin, entre deux distributions de croquettes.</div>
+        <audio id="audio-president" autoplay loop controls preload="auto"></audio>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="bloc" id="temoignages">
+  <div class="conteneur">
+    <div class="filet"></div>
+    <h4 class="titre-section">Ils ont adopté chez nous</h4>
+    <div class="sous-titre">Des nouvelles des anciens pensionnaires, envoyées par leurs familles.</div>
+    <div class="carrousel">
+      <div class="piste" id="piste-temoignages"></div>
+    </div>
+    <div class="puces" id="puces-temoignages"></div>
+  </div>
+</div>
+
+<div class="bloc bloc-creme" id="soutenir">
+  <div class="conteneur">
+    <div class="filet"></div>
+    <h4 class="titre-section">Nous soutenir</h4>
+    <div class="sous-titre">Le refuge vit uniquement des dons et de la vente de gâteaux du dimanche.
+      Aucune subvention, aucun salarié.</div>
+    <div class="soutien">
+      <div>
+        <span>Vingt euros, c'est un vaccin. Cinquante euros, c'est une stérilisation. Cent euros, c'est
+          un mois de croquettes pour le box des chiots. Et si vous ne pouvez pas donner, une heure de
+          votre samedi vaut tout autant : il y a toujours des gamelles à laver et des chiens à promener.</span>
+        <div class="bouton-don" onclick="ouvrirDon()"><span class="fa-solid fa-heart"></span><span>Faire un don</span></div>
+        <div class="mention-don">Association reconnue d'intérêt général — un reçu fiscal vous est adressé pour tout don supérieur à 20 €.</div>
+        <div class="galerie-soutien" id="galerie-soutien"></div>
+      </div>
+      <div class="infos-pratiques">
+        <div class="info-ligne"><span class="fa-solid fa-location-dot"></span><span>Chemin du Bois-Qui-Dort, lieu-dit Ravine Sans-Nom<br>97423 Saint-Paul, La Réunion</span></div>
+        <div class="info-ligne"><span class="fa-solid fa-phone"></span><span>0692 00 00 00</span></div>
+        <div class="info-ligne"><span class="fa-solid fa-envelope"></span><span>bonjour@refuge-patalourde.re</span></div>
+        <div class="info-ligne"><span class="fa-solid fa-paw"></span><span>Visites libres le samedi de 9 h à 12 h, sans rendez-vous.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="pied">
+  <div class="conteneur">
+    <div class="pied-grille">
+      <div>
+        <h4>Refuge Patalourde</h4>
+        <div>Association non déclarée en préfecture puisqu'il s'agit d'un faux site conçu
+          pour les besoins d'un cours en écoconception chez Simplon Outre Mer :)</div>
+      </div>
+      <div>
+        <h4>Nous joindre</h4>
+        <div class="pied-ligne"><span class="fa-solid fa-location-dot"></span><span>Chemin du Bois-Qui-Dort<br>lieu-dit Ravine Sans-Nom, 97423 Saint-Paul</span></div>
+        <div class="pied-ligne"><span class="fa-solid fa-phone"></span><span>0692 00 00 00</span></div>
+        <div class="pied-ligne"><span class="fa-solid fa-envelope"></span><span>bonjour@refuge-patalourde.re</span></div>
+      </div>
+      <div>
+        <h4>Horaires du refuge</h4>
+        <div class="horaire"><span>Lundi — mardi</span><span>Fermé</span></div>
+        <div class="horaire"><span>Mercredi</span><span>14 h – 17 h</span></div>
+        <div class="horaire"><span>Jeudi — vendredi</span><span>Sur rendez-vous</span></div>
+        <div class="horaire"><span>Samedi</span><span>9 h – 12 h</span></div>
+        <div class="horaire"><span>Dimanche</span><span>9 h – 11 h</span></div>
+        <div class="note-horaires">Le refuge ferme en cas d'alerte cyclonique orange ou rouge. Pensez à appeler avant de vous déplacer pendant la saison des pluies.</div>
+      </div>
+    </div>
+    <div class="pied-bas">
+      <span>© 2026 Gaël Duez — tous droits réservés</span>
+      <span>Site réalisé bénévolement par Gaël (s'il n'avait jamais fait de Green IT&nbsp;!)</span>
+    </div>
+  </div>
+</div>
+
+<div id="archives"></div>
+
+<script>
+var PHOTOS_REUTILISEES = ['photo-01', 'photo-02', 'photo-03', 'photo-09', 'photo-12', 'photo-14'];
+var PHOTOS_TEMOIGNAGES = ['photo-01', 'photo-02', 'photo-03', 'photo-09', 'photo-12',
+                          'photo-14', 'photo-05', 'photo-22'];
+
+var TEMOIGNAGES = [
+  {texte:"On est venus « juste pour voir » un samedi matin. On est repartis avec Mangue, et trois ans après elle dort toujours en travers du lit.", auteur:"Nadège et Willy", lieu:"Saint-Gilles-les-Hauts"},
+  {texte:"Mon vieux chien venait de mourir, je ne voulais plus d'animal. Les bénévoles ne m'ont rien forcé, ils m'ont juste offert un café. Je suis revenu le mois suivant.", auteur:"Gilbert", lieu:"Le Tampon"},
+  {texte:"Ils nous ont fait venir trois fois avant de valider le dossier. Sur le moment ça nous a agacés. Avec le recul, ils avaient raison de vérifier.", auteur:"Famille Hoarau", lieu:"Saint-André"},
+  {texte:"Notre chatte était terrorisée les deux premières semaines. L'équipe nous a appelés tous les trois jours pour prendre des nouvelles. Ça, aucune animalerie ne le fait.", auteur:"Christelle", lieu:"La Possession"},
+  {texte:"Adopter un chien de huit ans, on nous a dit qu'on était fous. C'est le compagnon le plus facile qu'on ait jamais eu.", auteur:"Marie-Claude et Serge", lieu:"L'Étang-Salé"},
+  {texte:"Les enfants ont choisi le lapin, ce qui n'était pas du tout le plan de départ. Aucun regret, il vit dans le salon comme un roi.", auteur:"Aurélie", lieu:"Sainte-Marie"},
+  {texte:"J'ai commencé par promener les chiens le dimanche pour me changer les idées. Deux ans plus tard je suis bénévole et j'ai adopté Praline.", auteur:"Fabrice", lieu:"Saint-Paul"},
+  {texte:"Ils sont bénévoles, ils n'ont pas un sou, et ils s'occupent mieux des animaux que bien des structures qui en ont. Merci à eux.", auteur:"Sylvie", lieu:"Saint-Pierre"}
+];
+
+function ajusterBarre() {
+  var hauteur = document.querySelector('.barre').offsetHeight;
+  document.documentElement.style.setProperty('--hauteur-barre', hauteur + 'px');
+}
+ajusterBarre();
+window.addEventListener('resize', ajusterBarre);
+
+function allerVers(id) {
+  document.getElementById(id).scrollIntoView({behavior:'smooth'});
+}
+
+function ouvrirDon() {
+  alert("Merci ! Les dons se font par virement : IBAN FR00 0000 0000 0000 0000 0000 000 (fictif) — ou directement au refuge le samedi matin.");
+}
+
+// bandeau + audio
+document.getElementById('bandeau-gif').src = 'assets/bandeau.gif?v=' + Date.now();
+document.getElementById('audio-president').src = 'assets/message-president.mp3?v=' + Date.now();
+
+// photos des fiches écrites en dur dans la page
+var fiches = document.querySelectorAll('[data-photo]');
+for (var f = 0; f < fiches.length; f++) {
+  fiches[f].src = fiches[f].getAttribute('data-photo') + '?v=' + Date.now();
+}
+
+// petite galerie de la rubrique dons
+var htmlGalerie = '';
+for (var g = 0; g < PHOTOS_REUTILISEES.length; g++) {
+  htmlGalerie += '<img src="assets/photos/' + PHOTOS_REUTILISEES[g] +
+                 '.jpg?rubrique=soutien&v=' + Date.now() + '">';
+}
+document.getElementById('galerie-soutien').innerHTML = htmlGalerie;
+
+// carrousel des témoignages
+var htmlTemoignages = '';
+var htmlPuces = '';
+for (var t = 0; t < TEMOIGNAGES.length; t++) {
+  htmlTemoignages += '<div class="temoignage">' +
+    '<img class="temoignage-photo" src="assets/photos/' + PHOTOS_TEMOIGNAGES[t] +
+    '.jpg?vue=portrait&v=' + Date.now() + '">' +
+    '<div class="temoignage-texte">« ' + TEMOIGNAGES[t].texte + ' »' +
+    '<div class="temoignage-auteur">' + TEMOIGNAGES[t].auteur +
+    ' <span class="temoignage-lieu">— ' + TEMOIGNAGES[t].lieu + '</span></div></div></div>';
+  htmlPuces += '<div class="puce' + (t === 0 ? ' puce-active' : '') + '"></div>';
+}
+document.getElementById('piste-temoignages').innerHTML = htmlTemoignages;
+document.getElementById('puces-temoignages').innerHTML = htmlPuces;
+
+var indexTemoignage = 0;
+setInterval(function () {
+  indexTemoignage = (indexTemoignage + 1) % TEMOIGNAGES.length;
+  document.getElementById('piste-temoignages').style.marginLeft = (-indexTemoignage * 100) + '%';
+  var puces = document.getElementById('puces-temoignages').children;
+  for (var p = 0; p < puces.length; p++) {
+    puces[p].className = 'puce' + (p === indexTemoignage ? ' puce-active' : '');
+  }
+}, 2500);
+
+// données du refuge
+document.addEventListener('DOMContentLoaded', function () {
+  fetch('data/animaux.json?v=' + Date.now())
+    .then(function (r) { return r.json(); })
+    .then(function (donnees) {
+      var htmlFiches = '';
+      var dispo = donnees.animaux_disponibles;
+      for (var i = 0; i < dispo.length; i++) {
+        var a = dispo[i];
+        htmlFiches += '<div class="fiche">' +
+          '<img class="fiche-photo" src="' + a.photo + '?v=' + Date.now() + '">' +
+          '<div class="fiche-corps"><h2>' + a.nom + '</h2>' +
+          '<div class="fiche-meta">' + a.espece + ' · ' + a.race + ' · ' + a.age + ' · ' + a.sexe + '</div>' +
+          '<div class="fiche-bio">' + a.bio + '</div>' +
+          '<div class="etiquettes"><span class="etiquette">' + a.caractere[0] + '</span>' +
+          '<span class="etiquette">' + a.caractere[1] + '</span></div>' +
+          '</div></div>';
+      }
+      document.getElementById('grille-animaux').innerHTML += htmlFiches;
+
+      var histo = donnees.historique_adoptions;
+      var htmlHisto = '';
+      for (var j = 0; j < histo.length; j++) {
+        var h = histo[j];
+        htmlHisto += '<div class="ligne-archive">' +
+          '<span>' + h.nom_animal + '</span>' +
+          '<span>' + h.date_adoption + '</span>' +
+          '<span>' + h.adoptant.prenom + ' ' + h.adoptant.nom + '</span>' +
+          '<span>' + h.commentaire_benevole + '</span>' +
+          '</div>';
+      }
+      document.getElementById('archives').innerHTML = htmlHisto;
+    });
+});
+</script>
+
+</body>
+</html>
