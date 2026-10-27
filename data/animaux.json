@@ -17,7 +17,7 @@
     "sociable",
     "câlin"
    ],
-   "photo": "assets/photos/photo-13.jpg",
+   "photo": "assets/optimized/photos/photo-13.webp",
    "sterilise": false,
    "identifie": true,
    "date_arrivee": "2025-06-15",
@@ -38,7 +38,7 @@
     "sociable",
     "indépendant"
    ],
-   "photo": "assets/photos/photo-14.jpg",
+   "photo": "assets/optimized/photos/photo-14.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-06-04",
@@ -59,7 +59,7 @@
     "joueur",
     "vif"
    ],
-   "photo": "assets/photos/photo-15.jpg",
+   "photo": "assets/optimized/photos/photo-15.webp",
    "sterilise": false,
    "identifie": true,
    "date_arrivee": "2025-01-11",
@@ -80,7 +80,7 @@
     "observateur",
     "doux"
    ],
-   "photo": "assets/photos/photo-16.jpg",
+   "photo": "assets/optimized/photos/photo-16.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-01-19",
@@ -101,7 +101,7 @@
     "câlin",
     "observateur"
    ],
-   "photo": "assets/photos/photo-17.jpg",
+   "photo": "assets/optimized/photos/photo-17.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-05-27",
@@ -122,7 +122,7 @@
     "doux",
     "joueur"
    ],
-   "photo": "assets/photos/photo-18.jpg",
+   "photo": "assets/optimized/photos/photo-18.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-12-07",
@@ -143,7 +143,7 @@
     "affectueux",
     "gourmand"
    ],
-   "photo": "assets/photos/photo-19.jpg",
+   "photo": "assets/optimized/photos/photo-19.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2025-06-07",
@@ -164,7 +164,7 @@
     "affectueux",
     "indépendant"
    ],
-   "photo": "assets/photos/photo-20.jpg",
+   "photo": "assets/optimized/photos/photo-20.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-02-07",
@@ -185,7 +185,7 @@
     "patient",
     "gourmand"
    ],
-   "photo": "assets/photos/photo-21.jpg",
+   "photo": "assets/optimized/photos/photo-21.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-12-22",
@@ -206,7 +206,7 @@
     "protecteur",
     "calme"
    ],
-   "photo": "assets/photos/photo-22.jpg",
+   "photo": "assets/optimized/photos/photo-22.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2024-03-23",
@@ -227,7 +227,7 @@
     "doux",
     "affectueux"
    ],
-   "photo": "assets/photos/photo-23.jpg",
+   "photo": "assets/optimized/photos/photo-23.webp",
    "sterilise": false,
    "identifie": true,
    "date_arrivee": "2025-02-13",
@@ -248,7 +248,7 @@
     "protecteur",
     "affectueux"
    ],
-   "photo": "assets/photos/photo-24.jpg",
+   "photo": "assets/optimized/photos/photo-24.webp",
    "sterilise": true,
    "identifie": true,
    "date_arrivee": "2025-04-05",
