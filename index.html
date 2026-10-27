@@ -166,9 +166,6 @@ body{
 .infos-pratiques{background:var(--blanc);border-radius:var(--rayon);padding:24px 26px;box-shadow:var(--ombre);}
 .info-ligne{display:flex;gap:12px;margin-bottom:12px;font-size:16px;}
 .info-ligne .fa-solid{color:var(--terracotta);width:20px;text-align:center;margin-top:4px;}
-.galerie-soutien{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:26px;}
-.galerie-soutien img{width:100%;height:108px;object-fit:cover;border-radius:10px;display:block;background:var(--gris-clair);}
-
 /* ---- pied de page ---- */
 .pied{background:var(--brun);color:#e9ded4;padding:52px 0 30px;}
 .pied-grille{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:36px;}
@@ -203,7 +200,6 @@ body{
   .marque{font-size:18px;}
   .menu-item{padding:6px 10px;font-size:14px;}
   .bandeau-texte{padding:0 20px;}
-  .galerie-soutien{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -420,7 +416,6 @@ body{
           votre samedi vaut tout autant : il y a toujours des gamelles à laver et des chiens à promener.</span>
         <div class="bouton-don" onclick="ouvrirDon()"><span class="fa-solid fa-heart"></span><span>Faire un don</span></div>
         <div class="mention-don">Association reconnue d'intérêt général — un reçu fiscal vous est adressé pour tout don supérieur à 20 €.</div>
-        <div class="galerie-soutien" id="galerie-soutien"></div>
       </div>
       <div class="infos-pratiques">
         <div class="info-ligne"><span class="fa-solid fa-location-dot"></span><span>Chemin du Bois-Qui-Dort, lieu-dit Ravine Sans-Nom<br>97423 Saint-Paul, La Réunion</span></div>
@@ -466,7 +461,6 @@ body{
 <div id="archives"></div>
 
 <script>
-var PHOTOS_REUTILISEES = ['photo-01', 'photo-02', 'photo-03', 'photo-09', 'photo-12', 'photo-14'];
 var PHOTOS_TEMOIGNAGES = ['photo-01', 'photo-02', 'photo-03', 'photo-09', 'photo-12',
                           'photo-14', 'photo-05', 'photo-22'];
 
@@ -505,14 +499,6 @@ var fiches = document.querySelectorAll('[data-photo]');
 for (var f = 0; f < fiches.length; f++) {
   fiches[f].src = fiches[f].getAttribute('data-photo') + '?v=' + Date.now();
 }
-
-// petite galerie de la rubrique dons
-var htmlGalerie = '';
-for (var g = 0; g < PHOTOS_REUTILISEES.length; g++) {
-  htmlGalerie += '<img loading="lazy" decoding="async" src="assets/optimized/photos/' + PHOTOS_REUTILISEES[g] +
-                 '.webp?rubrique=soutien&v=' + Date.now() + '">';
-}
-document.getElementById('galerie-soutien').innerHTML = htmlGalerie;
 
 // carrousel des témoignages
 var htmlTemoignages = '';
