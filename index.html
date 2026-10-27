@@ -514,7 +514,7 @@ document.getElementById('audio-president').src = 'assets/message-president.mp3';
 var fiches = document.querySelectorAll('[data-photo]');
 for (var f = 0; f < fiches.length; f++) {
   var photoFiche = fiches[f].getAttribute('data-photo');
-  fiches[f].srcset = photoSrcset(photoFiche, [320, 368, 640, 736]);
+  fiches[f].srcset = photoSrcset(photoFiche, [320, 368]);
   fiches[f].sizes = TAILLES_PHOTOS_FICHES;
   fiches[f].src = photoFiche.replace(/\.webp$/, '-368.webp');
 }
@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function () {
         var a = dispo[i];
         htmlFiches += '<div class="fiche">' +
           '<img class="fiche-photo" width="368" height="245" loading="lazy" decoding="async" sizes="' + TAILLES_PHOTOS_FICHES +
-          '" srcset="' + photoSrcset(a.photo, [320, 368, 640, 736]) + '" src="' + a.photo.replace(/\.webp$/, '-368.webp') + '">' +
+          '" srcset="' + photoSrcset(a.photo, [320, 368]) + '" src="' + a.photo.replace(/\.webp$/, '-368.webp') + '">' +
           '<div class="fiche-corps"><h2>' + a.nom + '</h2>' +
           '<div class="fiche-meta">' + a.espece + ' · ' + a.race + ' · ' + a.age + ' · ' + a.sexe + '</div>' +
           '<div class="fiche-bio">' + a.bio + '</div>' +
